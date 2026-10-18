@@ -1,6 +1,6 @@
 ---
 - name: Install wpasupplicant packages
-  apt:
+  ansible.builtin.apt:
     name="{{ pkgs }}"
     state="present"
     update_cache=False
@@ -10,7 +10,7 @@
     - wpasupplicant
 
 - name: wpa supplicant conf
-  template:
+  ansible.builtin.template:
     src: wpa_supplicant.conf.j2
     dest: /etc/wpa_supplicant/wpa_supplicant.conf
     owner: root
