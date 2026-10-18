@@ -1,15 +1,15 @@
 ---
 - name: Install wpasupplicant packages
   ansible.builtin.apt:
-    name="{{ pkgs }}"
-    state="present"
-    update_cache=False
-    install_recommends=False
+    name: "{{ pkgs }}"
+    state: present
+    update_cache: false
+    install_recommends: false
   vars:
     pkgs:
     - wpasupplicant
 
-- name: wpa supplicant conf
+- name: Wpa supplicant conf
   ansible.builtin.template:
     src: wpa_supplicant.conf.j2
     dest: /etc/wpa_supplicant/wpa_supplicant.conf
