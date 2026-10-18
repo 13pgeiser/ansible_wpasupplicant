@@ -7,7 +7,7 @@
     install_recommends: false
   vars:
     pkgs:
-    - wpasupplicant
+      - wpasupplicant
 
 - name: Wpa supplicant conf
   ansible.builtin.template:
@@ -15,5 +15,4 @@
     dest: /etc/wpa_supplicant/wpa_supplicant.conf
     owner: root
     group: root
-    mode: 0600
-
+    mode: "0600"
